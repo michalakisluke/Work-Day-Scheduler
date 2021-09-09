@@ -3,9 +3,8 @@ document.querySelector("#currentDay").textContent = date;
 var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
 
 
- $(".hour").each(function() {
-    console.log(hours);
-    $(".hour").text(hours);
+ $(".hour").each(function(index, element) {
+    $(element).text(moment().hour(hours[index]).format("h A"));
 });
 
 
