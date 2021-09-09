@@ -11,11 +11,14 @@ $(".hour").each(function(index, element) {
 
 
 $(".hour").each(function(index) {
-    console.log(hours[index]);
-    console.log(currentTime);
-    console.log(hours[index] === currentTime)
-    console.log(hours[index] > currentTime)
-    console.log(hours[index] < currentTime)
+    console.log("Value at index " + hours[index]);
+    console.log("Value at current " + currentTime);
+    console.log("Values are equal");
+    console.log(hours[index] === currentTime);
+    console.log("Current time is earlier than index"); 
+    console.log(hours[index] > currentTime);
+    console.log("Current time is later than index"); 
+    console.log(hours[index] < currentTime);
     console.log("New time");
     if (hours[index] === currentTime) {
         $(".description").attr("class", "col-10 description present");
