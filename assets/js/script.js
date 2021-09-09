@@ -14,9 +14,9 @@ for (i = 0; i < 24; i++) {
     row.appendChild(time);
 
     // create work to do element
-    var work = document.createElement("div");
+    var work = document.createElement("form");
     work.setAttribute("class", "time-block");
-    var workText = document.createElement("input");
+    var workText = document.createElement("textarea");
     workText.setAttribute("class", "description");
     work.appendChild(workText);
     row.appendChild(work);
