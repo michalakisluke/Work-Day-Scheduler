@@ -1,6 +1,8 @@
 var date = moment().format("dddd, MMMM Do");
 document.querySelector("#currentDay").textContent = date;
 var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
+var currentTime = moment().format("HH");
+console.log(currentTime);
 
 
 $(".hour").each(function(index, element) {
@@ -9,16 +11,18 @@ $(".hour").each(function(index, element) {
 
 
 
-$(".hour").each(function() {
-    if ($(".hour").value === moment().format("h A").value) {
+$(".hour").each(function(index) {
+    console.log(hours[index]);
+    console.log(currentTime);
+    if (hours[index] === currentTime) {
         $(".description").attr("class", "col-10 description present");
     }
     
-    else if ($(".hour").value > moment().format("h A").value) {
+    else if (hours[index] > currentTime) {
         $(".description").attr("class", "col-10 description future");
     }
     
-    else if ($(".hour").value < moment().format("h A").value) {
+    else if (hours[index] < currentTime) {
         $(".description").attr("class", "col-10 description past");
     };
 });
