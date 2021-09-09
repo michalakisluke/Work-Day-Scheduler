@@ -9,34 +9,16 @@ $(".hour").each(function(index, element) {
 
 
 
-// Everything below this point is probably useless
-
-// for (i = 0; i < 9; i++) {
-//     //Create rows ---> I think done
-//     var row = document.createElement("div");
-//     row.setAttribute("class", "row");
-//     document.querySelector(".container").appendChild(row);
-
-//     // Create time element ---> Not done!
-//     var time = document.createElement("div");
-//     time.setAttribute("class", "hour");
-//     time.textContent = moment(hours[i]).format('LT');
-//     console.log(time.textContent);
-//     row.appendChild(time);
-
-//     // create work to do element
-//     var work = document.createElement("form");
-//     work.setAttribute("class", "time-block");
-//     var workText = document.createElement("textarea");
-//     workText.setAttribute("class", "description");
-//     work.appendChild(workText);
-//     row.appendChild(work);
-
-//     // create save button element
-//     var save = document.createElement("button");
-//     save.setAttribute("class", "saveBtn");
-//     var saveText = document.createElement("i");
-//     saveText.TextContent = "Save";
-//     save.appendChild(saveText);
-//     row.appendChild(save);
-// }
+$(".hour").each(function() {
+    if ($(".hour").value === moment().format("h A").value) {
+        $(".description").attr("class", "col-10 description present");
+    }
+    
+    else if ($(".hour").value > moment().format("h A").value) {
+        $(".description").attr("class", "col-10 description future");
+    }
+    
+    else if ($(".hour").value < moment().format("h A").value) {
+        $(".description").attr("class", "col-10 description past");
+    };
+});
