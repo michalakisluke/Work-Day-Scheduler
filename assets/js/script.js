@@ -44,7 +44,7 @@ $("textarea").each(function(index){
     
         var targetId = ($target.attr("id").split("-")[1]);
         var textareaText = $("#hour-"+targetId).val();
-        console.log($("#hour-"+targetId));
+        console.log(JSON.stringify($("#hour-"+targetId)));
         
         saveTasksArray.push([$("#hour-"+targetId),textareaText]);
         localStorage.setItem("tasks",JSON.stringify(saveTasksArray));
