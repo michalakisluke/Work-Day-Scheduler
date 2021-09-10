@@ -46,8 +46,9 @@ $("textarea").each(function(index){
     
         var targetId = ($target.attr("id").split("-")[1]);
         var textareaText = $("#hour-"+targetId).val();
+        console.log(index);
 
-        saveTasksArray.splice(index, index, ["hour-"+idSelect, textareaText]);
+        saveTasksArray.splice(index, 1, ["hour-"+idSelect, textareaText]);
 
         //saveTasksArray.push([("hour-"+targetId),textareaText]);
         localStorage.setItem("tasks",JSON.stringify(saveTasksArray));
