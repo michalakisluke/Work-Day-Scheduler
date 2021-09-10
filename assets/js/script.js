@@ -36,16 +36,9 @@ $("textarea").each(function(index){
         }
     
         var targetId = ($target.attr("id").split("-")[1]);
-        console.log($("#hour-"+targetId).val());
+        var textareaText = $("#hour-"+targetId).val();
+        console.log(textareaText);
     });
-
-    // $("#button-"+idSelect).on("click", function() {
-    //     var targetId = event.target.id.split("-")[1];
-    //     var textareaId = "hour-" + targetId;
-    //     console.log(targetId);
-    //     console.log($(this).attr("id"));
-    //     console.log(textareaId);
-    // })
 });
 
 // Display text in text area on refresh
