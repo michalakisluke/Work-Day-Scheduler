@@ -28,9 +28,9 @@ $(".hour").each(function(index) {
 
 $("textarea").each(function(index){
     idSelect = index + 1;
-    //console.log("#hour-" + idSelect);
     $("#button-"+idSelect).on("click", function() {
-        console.log("#hour-" + idSelect);
+        console.log($(this).attr("id"));
+        console.log(("textarea").innerHTML);
     })
 });
 
