@@ -28,12 +28,24 @@ $(".hour").each(function(index) {
 
 $("textarea").each(function(index){
     idSelect = index + 1;
-    $("#button-"+idSelect).on("click", function() {
-        var targetId = event.target.id.split("-")[1];
-        console.log(targetId);
-        console.log($(this).attr("id"));
-        console.log("hour-"+targetId);
-    })
+    $("#button-" + idSelect).on("click", function (event) {
+        var $target = $(event.target);
+    
+        if ($target.is("i")) {
+            $target = $target.parent();
+        }
+    
+        var targetId = ($target.attr("id").split("-")[1]);
+        console.log($("#hour-"+targetId).val());
+    });
+
+    // $("#button-"+idSelect).on("click", function() {
+    //     var targetId = event.target.id.split("-")[1];
+    //     var textareaId = "hour-" + targetId;
+    //     console.log(targetId);
+    //     console.log($(this).attr("id"));
+    //     console.log(textareaId);
+    // })
 });
 
 // Display text in text area on refresh
