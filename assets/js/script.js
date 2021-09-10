@@ -30,7 +30,7 @@ $("textarea").each(function(index){
     idSelect = index + 1;
     $("#button-"+idSelect).on("click", function() {
         console.log($(this).attr("id"));
-        console.log(("textarea").innerHTML);
+        console.log($("textarea").attr("id"));
     })
 });
 
