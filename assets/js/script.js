@@ -12,6 +12,18 @@ function checkTask() {
   
 checkTask();
 
+function printTasks() {
+    saveTasksArray = JSON.parse(window.localStorage.getItem('tasks'));
+    console.log(JSON.parse(window.localStorage.getItem('tasks')));
+    for (i = 0; i < 9; i++) {
+        var loadSelect = i + 1;
+        console.log("#hour-"+loadSelect);
+        $("#hour-"+loadSelect).attr("value", saveTasksArray[i][1]);
+    };
+};
+
+printTasks();
+
 // Assign Hours to hour element
 $(".hour").each(function(index, element) {
     $(element).text(moment().hour(hours[index]).format("h A"));
