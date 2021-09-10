@@ -5,10 +5,10 @@ var currentTime = moment().format("HH");
 let saveTasksArray;
 
 function checkTask() {
-    scoresArray =  JSON.parse(window.localStorage.getItem('tasks')) || [];
-  }
+    saveTasksArray =  JSON.parse(window.localStorage.getItem('tasks')) || [];
+}
   
-  checkTask();
+checkTask();
 
 // Assign Hours to hour element
 $(".hour").each(function(index, element) {
@@ -44,6 +44,7 @@ $("textarea").each(function(index){
     
         var targetId = ($target.attr("id").split("-")[1]);
         var textareaText = $("#hour-"+targetId).val();
+        console.log($("#hour-"+targetId));
         
         saveTasksArray.push([$("#hour-"+targetId),textareaText]);
         localStorage.setItem("tasks",JSON.stringify(saveTasksArray));
