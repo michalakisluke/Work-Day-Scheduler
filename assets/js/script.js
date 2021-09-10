@@ -46,7 +46,7 @@ $("textarea").each(function(index){
     
         var targetId = ($target.attr("id").split("-")[1]);
         var textareaText = $("#hour-"+targetId).val();
-        console.log(index);
+        console.log(idSelect);
 
         saveTasksArray.splice(index, 1, ["hour-"+idSelect, textareaText]);
 
