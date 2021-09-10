@@ -5,20 +5,22 @@ var currentTime = moment().format("HH");
 let saveTasksArray;
 
 
-function checkTask() {
-    saveTasksArray =  JSON.parse(window.localStorage.getItem('tasks')) || [["hour-1", ""],["hour-2", ""],["hour-3", ""],["hour-4", ""],["hour-5", ""],
-                                                                           ["hour-6", ""],["hour-7", ""],["hour-8", ""],["hour-9", ""]];
-}
+// function checkTask() {
+//     saveTasksArray =  JSON.parse(window.localStorage.getItem('tasks')) || [["hour-1", ""],["hour-2", ""],["hour-3", ""],["hour-4", ""],["hour-5", ""],
+//                                                                            ["hour-6", ""],["hour-7", ""],["hour-8", ""],["hour-9", ""]];
+// }
   
-checkTask();
+// checkTask();
 
 function printTasks() {
-    saveTasksArray = JSON.parse(window.localStorage.getItem('tasks'));
+    saveTasksArray =  JSON.parse(window.localStorage.getItem('tasks')) || [["hour-1", ""],["hour-2", ""],["hour-3", ""],["hour-4", ""],["hour-5", ""],
+                                                                           ["hour-6", ""],["hour-7", ""],["hour-8", ""],["hour-9", ""]];
     console.log(JSON.parse(window.localStorage.getItem('tasks')));
     for (i = 0; i < 9; i++) {
         var loadSelect = i + 1;
         console.log("#hour-"+loadSelect);
-        $("#hour-"+loadSelect).attr("value", saveTasksArray[i][1]);
+        console.log(saveTasksArray[i][1]);
+        $("#hour-"+loadSelect).attr("innerHTML", saveTasksArray[i][1]);
     };
 };
 
