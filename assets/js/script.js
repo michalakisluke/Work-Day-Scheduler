@@ -2,6 +2,13 @@ var date = moment().format("dddd, MMMM Do");
 document.querySelector("#currentDay").textContent = date;
 var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
 var currentTime = moment().format("HH");
+let saveTasksArray;
+
+function checkTask() {
+    scoresArray =  JSON.parse(window.localStorage.getItem('tasks')) || [];
+  }
+  
+  checkTask();
 
 // Assign Hours to hour element
 $(".hour").each(function(index, element) {
@@ -37,8 +44,11 @@ $("textarea").each(function(index){
     
         var targetId = ($target.attr("id").split("-")[1]);
         var textareaText = $("#hour-"+targetId).val();
-        console.log(textareaText);
+        
+        saveTasksArray.push([$("#hour-"+targetId),textareaText]);
+        localStorage.setItem("tasks",JSON.stringify(saveTasksArray));
     });
 });
+
 
 // Display text in text area on refresh
