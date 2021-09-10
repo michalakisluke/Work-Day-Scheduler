@@ -13,16 +13,25 @@ $(".hour").each(function(index) {
     var idSelect = index + 1;
     if (parseInt(hours[index]) === parseInt(currentTime)) {
         $("#hour-"+ idSelect).attr("class", "col-10 description present");
-        console.log("equal");
     }
     
     else if (parseInt(hours[index]) > parseInt(currentTime)) {
         $("#hour-"+ idSelect).attr("class", "col-10 description future");
-        console.log("It's future")
     }
     
     else if (parseInt(hours[index]) < parseInt(currentTime)) {
         $("#hour-"+ idSelect).attr("class", "col-10 description past");
-        console.log("It's past")
     };
 });
+
+// Save text in text area 
+
+$("textarea").each(function(index){
+    idSelect = index + 1;
+    //console.log("#hour-" + idSelect);
+    $("#button-"+idSelect).on("click", function() {
+        console.log("#hour-" + idSelect);
+    })
+});
+
+// Display text in text area on refresh
