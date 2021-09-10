@@ -2,21 +2,13 @@ var date = moment().format("dddd, MMMM Do");
 document.querySelector("#currentDay").textContent = date;
 var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
 var currentTime = moment().format("HH");
-let saveTasksArray = {"hour-1": "",
-                      "hour-2": "",
-                      "hour-3": "",
-                      "hour-4": "",
-                      "hour-5": "",
-                      "hour-6": "",
-                      "hour-7": "",
-                      "hour-8": "",
-                      "hour-9": ""};
+let saveTasksArray = {};
 
-// function checkTask() {
-//     saveTasksArray =  JSON.parse(window.localStorage.getItem('tasks')) || [];
-// }
+function checkTask() {
+    saveTasksArray =  JSON.parse(window.localStorage.getItem('tasks')) || [];
+}
   
-// checkTask();
+checkTask();
 
 // Assign Hours to hour element
 $(".hour").each(function(index, element) {
@@ -52,11 +44,9 @@ $("textarea").each(function(index){
     
         var targetId = ($target.attr("id").split("-")[1]);
         var textareaText = $("#hour-"+targetId).val();
-        saveTasksArray.$("hour-"+targetId) = textareaText;
-        localStorage.setItem("tasks",JSON.stringify(saveTasksArray));
         
-        // saveTasksArray.push([("hour-"+targetId),textareaText]);
-        // localStorage.setItem("tasks",JSON.stringify(saveTasksArray));
+        saveTasksArray.push([("hour-"+targetId),textareaText]);
+        localStorage.setItem("tasks",JSON.stringify(saveTasksArray));
     });
 });
 
