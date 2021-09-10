@@ -20,7 +20,7 @@ function printTasks() {
         var loadSelect = i + 1;
         console.log("#hour-"+loadSelect);
         console.log(saveTasksArray[i][1]);
-        $("#hour-"+loadSelect).attr("innerHTML", saveTasksArray[i][1]);
+        $("#hour-"+loadSelect).val(saveTasksArray[i][1]);
     };
 };
 
