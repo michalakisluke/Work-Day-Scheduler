@@ -44,10 +44,10 @@ $("textarea").each(function(index){
     
         var targetId = ($target.attr("id").split("-")[1]);
         var textareaText = $("#hour-"+targetId).val();
-        console.log(JSON.stringify($("#hour-"+targetId)));
+        console.log(("hour-"+targetId));
         
-        // saveTasksArray.push([$("#hour-"+targetId),textareaText]);
-        // localStorage.setItem("tasks",JSON.stringify(saveTasksArray));
+        saveTasksArray.push([("hour-"+targetId),textareaText]);
+        localStorage.setItem("tasks",JSON.stringify(saveTasksArray));
     });
 });
 
